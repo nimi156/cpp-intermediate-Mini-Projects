@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n; // integer varible n
+    cout << "Enter an integer" ; // cout statment asking the user to enter a number
+    cin >> n; // cin store the value inputed by the user to the varible n
+    if(n % 2==0) // the if statment takes n divdes it by 2 
+        cout << n << "is even" ;
+    else
+        cout<< n << "is odd" ;
+
+}
