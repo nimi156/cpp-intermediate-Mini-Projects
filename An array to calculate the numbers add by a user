@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numbers[100], sum = 0; // creating two varibles, sum which is equal to zero and numbers which is an array that holds 100 "values"
+    cout << "Enter 10 numbers: "; // asking the user to input 10 numbers
+
+  
+  
+    for (int i = 0; i < 11; ++i) // forlooping through i < 11
+    {
+        cin >> numbers[i]; // cin stores the value in the number array while i is one 1 value
+        sum += numbers[i]; // then sum is euqal to the value added to the array plus the value of sum
+    }
+
+    cout << "Sum = " << sum << endl; // we print out the sum
+
+    return 0;
+}
