@@ -1,0 +1,22 @@
+/*
+
+This program takes an intger input from the user and stores it in variable n, then the while loop is iterated until n!=0 is false. In each iteration, the remainder when the value of n is divided by
+10 is calculated, reversedNumber is computed and the value of n is decreased 10 fold. Finally, the reversedNumber ( which contains the reversed number) is printed on the screan
+
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,reversedNumber=0, remainder;                      //Declaring three varibles n , remainder and reversedNumber=0 which is equal to zero
+    cout<<"Enter an Integer:    ";
+    cin >>n;    // n varible holds user input
+    while(n!=0) // while loop while n is not equal to 0 ( becasue 0 reversed to 0 is 0)
+    {
+        remainder = n%10; // the int value remainder is divded by 10 and the value n is divded by 100, the value is stored in remainder
+        reversedNumber = reversedNumber *10 + remainder; // remainder is then x 10 casuing the numbers to reverse.
+        n/=10;
+    }
+cout <<"Reversed Number = " << reversedNumber;
+}
