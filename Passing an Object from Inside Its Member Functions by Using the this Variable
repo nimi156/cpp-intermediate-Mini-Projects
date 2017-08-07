@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+class Cheese
+{
+public:
+    string status;
+    void eat();
+    void rot();
+};
+int CheeseCount;
+
+void OneMoreCheesegone(Cheese *Block)
+{
+    CheeseCount-- ;
+    Block->status="Gone";
+};
+
+void Cheese::eat()
+{
+    cout <<"Rotted away! Yuck" <<endl;
+    OneMoreCheesegone(this);
+}
+
+void Cheese::rot()
+{
+    cout<<"Rotted away! Yuck" <<endl;
+    OneMoreCheesegone(this);
+}
+
+int main()
+{
+
+
+Cheese *asiago = new Cheese();
+Cheese *limburger=new Cheese();
+
+CheeseCount=2;
+
+asiago ->eat();
+limburger -> rot();
+
+cout<<endl;
+cout<<"Cheese count:    " <<CheeseCount<<endl;
+cout <<"asiago: " <<asiago ->status <<endl;
+cout <<"limburger: " <<limburger ->status <<endl;
+
+
+
+}
+
+/*
+output is:
+Eaten up! Yummy
+Rotted away! Yuck
+
+Chese count:0
+asiago: gone
+limburger: Gone
+----------------
+
+the first line is the result of calling asiago ->eat(),which prints one message.
+ The second line is the result of calling limburger->rot(),which prints another message.
+ The third line is simply the value in the variable CheeseCount.
+ this variable was decremented once each time the computer called the OneMoreCheseGone function.
+ Becasue the function was called twice,CheeseCount went from 2 to 1 to 0
+ 
+ The final two lines shows the content of the status variable in the two objects.
+ 
+
