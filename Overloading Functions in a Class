@@ -1,0 +1,111 @@
+#include <iostream>
+
+using namespace std;
+
+class Cat
+{
+public:
+    string name;
+
+};
+
+class Dog
+{
+public:
+    string name;
+};
+
+class Human
+{
+public:
+    string name;
+};
+
+class Door
+{
+private:
+    int HowManyInside;
+
+public:
+    void Start();
+    void GoThrough(Cat *acat);
+    void GoThrough(Dog *adog);
+    void GoThrough(Human *ahuman);
+};
+
+void Door:: Start()
+{
+    HowManyInside=0;
+}
+
+void Door :: GoThrough(Cat *somebody)
+{
+    cout<< "welcome," <<somebody->name <<endl;
+    HowManyInside++;
+
+}
+
+void Door::GoThrough(Dog *somebody)
+{
+    cout<<"Welcome, "<<somebody->name<<endl;
+    cout<<"A dog just entered" <<endl;
+    HowManyInside++;
+
+}
+
+void Door::GoThrough(Human *somebody)
+{
+    cout<<"Welcome," << somebody->name <<endl;
+    cout <<"A human just entered!" <<endl;
+    HowManyInside++;
+}
+
+int main()
+{
+    Door entrance;
+    entrance.Start();
+
+    Cat *SneekyGirl = new Cat;
+    SneekyGirl ->name="sneeky Girl";
+
+    Dog *LittleGeorage = new Dog;
+    LittleGeorage -> name ="Little george" ;
+
+
+    Human *me= new Human;
+    me->name ="Jeff";
+
+    entrance.GoThrough(SneekyGirl);
+    entrance.GoThrough(LittleGeorage);
+    entrance.GoThrough(me);
+
+    delete SneekyGirl;
+    delete LittleGeorage;
+    delete me;
+
+    return 0;
+
+}
+
+
+/*
+The program allows them to enter like humans.The beginning of this program declares three classes, Car,Dog and Human, each with name member.
+Next is the Door class. A print member, HowManyInside, tracks how many being have entered.
+Then we have a public function called Start, which activates the door, Finally, the class contains the overloaded functions.
+They all have the same name and the same return type. You can have different return types, but they must differ by parameters.
+These do; one takes a Cat pointer; one takes a Dog pointer; and one takes a Human pointer.
+
+next is the code for the member functions. The first fuction, Start, is easy to activate. It sets HowManyInside to 0. The next three functios are
+overloaded. They do similar things but they write slighty different message, each takes a diffrent type.
+
+Then we have int main() body, which creates a Door instance. After creating the door instance we called its Start function. nwxt, we created three
+creature instances: one Cat, one Dog, and one Human. We also set the name member variables for each.
+
+Then we call the entrance.GoThrough function. The first time we pass a Cat, then we pass a Dog, and then we pass a Human.
+*/
+
+
+
+
+
+
